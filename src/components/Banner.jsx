@@ -1,7 +1,6 @@
 import React from "react";
 
 const Banner = ({ movie }) => {
-	console.log("movie가 Banner들어왔나?", movie);
 	return (
 		<div
 			className="banner"
