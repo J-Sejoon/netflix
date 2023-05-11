@@ -12,7 +12,7 @@ let initialState = {
 };
 
 const movieSlice = createSlice({
-	name: "movie", //액션 네임을 만들어줌
+	name: "movie",
 	initialState,
 	reducers: {
 		getMoviesRequest(state, action) {
