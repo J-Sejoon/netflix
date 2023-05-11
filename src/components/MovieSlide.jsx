@@ -1,6 +1,3 @@
-//react multi carousel 슬라이더 컴포넌트
-//https://www.npmjs.com/package/react-multi-carousel
-
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
