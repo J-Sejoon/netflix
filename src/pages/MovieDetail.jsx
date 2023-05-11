@@ -14,7 +14,7 @@ const MovieDetail = () => {
 
 	useEffect(() => {
 		dispatch(movieAction.getMoviesDetail(id));
-		window.scrollTo(0, 0); //화면 제일 위로 올라간 상태로 열리게
+		window.scrollTo(0, 0);
 	}, [id]);
 
 	if (loading) {
