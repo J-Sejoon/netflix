@@ -1,17 +1,12 @@
-//미들웨어 부분 toolkit
-
 import api from "../api";
 import { movieActions } from "../reducers/movieReducer";
 
 const APIkey = process.env.REACT_APP_APIKEY;
-//받아온 키 값을 노출되지 않게 만든다 -> 루트에 .env 파일
-//미들웨어는 함수가 함수를 리턴
 
-//영화 데이터 가져오기
 function getMovies() {
 	return async (dispatch) => {
 		try {
-			dispatch(movieActions.getMoviesRequest()); //로딩전 던져줌
+			dispatch(movieActions.getMoviesRequest()); 
 
 			const popularMovieApi = api.get(
 				`/movie/popular?api_key=${APIkey}&language=en-US&page=1`,
@@ -34,7 +29,6 @@ function getMovies() {
 					genreApi,
 				]);
 
-			//데이터 도착후
 			dispatch(
 				movieActions.getMainMovies({
 					popularMovies: popularMovies.data,
@@ -44,13 +38,11 @@ function getMovies() {
 				}),
 			);
 		} catch (error) {
-			//에러 핸들링
 			dispatch(movieActions.getMoviesFailure());
 		}
 	};
 }
 
-//디테일 데이터 가져오기
 function getMoviesDetail(id) {
 	return async (dispatch) => {
 		try {
