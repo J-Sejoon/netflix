@@ -5,10 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
 	const { genreList } = useSelector((state) => state.movie);
-	//store에서 genreList불러옴
 	const navigate = useNavigate();
 
-	//카드 클릭시 디테일 페이지로 전환
 	const gotoDetail = () => {
 		navigate(`/movies/${item.id}`);
 	};
